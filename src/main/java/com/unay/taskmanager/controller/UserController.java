@@ -33,6 +33,11 @@ public class UserController {
     public ResponseEntity<Boolean> createNewUser(@RequestBody Map<String, String> map) {
         return new ResponseEntity<>(userService.createNewUser(map), HttpStatus.OK);
     }
+    
+    @RequestMapping(value = "/registerFromList", method = RequestMethod.POST)
+    public ResponseEntity<Integer> createNewUserFromList(@RequestBody List<Map<String, String>> map) {
+        return new ResponseEntity<>(userService.createNewUser(map), HttpStatus.OK);
+    }
 
     @RequestMapping(value = "/updatePassword", method = RequestMethod.PUT)
     public ResponseEntity<Boolean> updatePassword(@RequestBody Map<String, String> map) {
