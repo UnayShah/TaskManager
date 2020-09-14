@@ -23,10 +23,11 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	
 	@Id
 	@Column(name = "username", nullable = false, length = 15)
 	private String username;
 	@Column(name = "password", nullable = false)
 	private String password;
+
 }

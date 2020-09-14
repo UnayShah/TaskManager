@@ -29,21 +29,16 @@ public class UserController {
         return new ResponseEntity<>(userService.findAll(), HttpStatus.ACCEPTED);
     }
 
-    @RequestMapping(value = "/register", method = RequestMethod.PUT)
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
     public ResponseEntity<Boolean> createNewUser(@RequestBody Map<String, String> map) {
         return new ResponseEntity<>(userService.createNewUser(map), HttpStatus.OK);
     }
 
-    // @RequestMapping(value = "/updateUsername", method = RequestMethod.PUT)
-    // public ResponseEntity<Boolean> updateUsername(@RequestBody Map<String, String> map) {
-    //     return new ResponseEntity<>(userService.updateUsername(map), HttpStatus.ACCEPTED);
-    // }
+    @RequestMapping(value = "/updatePassword", method = RequestMethod.PUT)
+    public ResponseEntity<Boolean> updatePassword(@RequestBody Map<String, String> map) {
+        return new ResponseEntity<>(userService.updatePassword(map), HttpStatus.ACCEPTED);
 
-    // @RequestMapping(value = "/updatePassword", method = RequestMethod.POST)
-    // public ResponseEntity<Boolean> updatePassword(@RequestBody Map<String, String> map) {
-    //     return new ResponseEntity<>(userService.updatePassword(map), HttpStatus.ACCEPTED);
-
-    // }
+    }
 
     @RequestMapping(value = "/checkUsername", method = RequestMethod.POST)
     public ResponseEntity<Boolean> checkUsername(@RequestBody Map<String, String> map) {

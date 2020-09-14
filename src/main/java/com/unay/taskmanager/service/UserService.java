@@ -50,24 +50,23 @@ public class UserService {
 				&& userRepository.findById(user.getUsername()).get().getPassword().equals(user.getPassword());
 	}
 
-	// public boolean updateUsername(Map<String, String> map) {
-	// 	if (checkUsername(map)) {
-	// 		userRepository.updateUsername(map.get("oldUsername"), map.get("oldPassword"), map.get("newUsername"));
-	// 		return true;
-	// 	}
-	// 	return false;
-	// }
-
-	// public boolean updatePassword(Map<String, String> map) {
-	// 	if (checkUsername(map)) {
-	// 		userRepository.updatePassword(map.get("oldUsername"), map.get("oldPassword"), map.get("newPassword"));
-	// 		return true;
-	// 	}
-	// 	return false;
-	// }
+	public boolean updatePassword(Map<String, String> map) {
+		map.put("username", map.get("oldUsername"));
+		if (checkUsername(map)) {
+			User user = userRepository.getOne(map.get("oldUsername"));
+			if (user.getPassword().equals(map.get("oldPassword"))) {
+				user.setPassword(map.get("newPassword"));
+				user = userRepository.save(user);
+				return true;
+			} else
+				return false;
+		}
+		return false;
+	}
 
 	public boolean createNewUser(Map<String, String> map) {
 		if (!checkUsername(map)) {
+			System.out.println("Saving");
 			return save(mapToUser(map));
 		} else {
 			System.out.println("User Exists");
