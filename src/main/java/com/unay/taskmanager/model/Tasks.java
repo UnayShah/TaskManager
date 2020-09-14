@@ -10,11 +10,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tasks")
 public class Tasks {
-    public String getId() {
+    public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -26,11 +26,11 @@ public class Tasks {
 		this.username = username;
 	}
 
-	public String getParentId() {
+	public Long getParentId() {
 		return parentId;
 	}
 
-	public void setParentId(String parentId) {
+	public void setParentId(Long parentId) {
 		this.parentId = parentId;
 	}
 
@@ -45,12 +45,12 @@ public class Tasks {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private String id;
+    private Long id;
 
     @Column(name = "username", nullable = false, length = 15)
     private String username;
     @Column(name = "parentid", nullable = true)
-    private String parentId;
+    private Long parentId;
     @Column(name = "description", nullable = true, length = 100)
     private String description;
 

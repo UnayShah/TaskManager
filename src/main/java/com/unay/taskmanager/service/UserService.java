@@ -76,7 +76,7 @@ public class UserService {
 
 	public int createNewUser(List<Map<String, String>> listMap) {
 		int counter = 0;
-		for (Map map : listMap) {
+		for (Map<String, String> map : listMap) {
 			if (!checkUsername(map)) {
 				System.out.println("Saving");
 				save(mapToUser(map));
