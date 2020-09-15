@@ -1,6 +1,7 @@
 package com.unay.taskmanager.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import com.unay.taskmanager.model.Tasks;
 import com.unay.taskmanager.service.TaskService;
@@ -25,7 +26,7 @@ public class TaskController {
     }
 
     @RequestMapping(value = "/createTask", method = RequestMethod.POST)
-    public ResponseEntity<Boolean> createNewTask(@RequestBody Tasks task){
-        return new ResponseEntity<>(taskService.createNewTask(task), HttpStatus.ACCEPTED);
+    public ResponseEntity<Boolean> createNewTask(@RequestBody Map<String, String> map){
+        return new ResponseEntity<>(taskService.createNewTask(map), HttpStatus.ACCEPTED);
     }
 }
