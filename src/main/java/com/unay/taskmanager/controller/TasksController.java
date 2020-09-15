@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
 @Controller
 public class TasksController {
     
@@ -30,8 +31,9 @@ public class TasksController {
         return new ResponseEntity<>(tasksService.createNewTask(map), HttpStatus.ACCEPTED);
     }
 
-    @RequestMapping(value = "/findAllByParentId", method = RequestMethod.POST)
+    @RequestMapping(value = "/findByParentId", method = RequestMethod.POST)
     public ResponseEntity<List<Tasks>> findAllByParentId(@RequestBody Map<String, String> map){
         return new ResponseEntity<>(tasksService.findAllByParentId(map), HttpStatus.ACCEPTED);
     }
+
 }

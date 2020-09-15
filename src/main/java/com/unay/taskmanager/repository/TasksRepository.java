@@ -16,4 +16,5 @@ public interface TasksRepository extends JpaRepository<Tasks, Long> {
 
     @Query(value = "SELECT t.id from tasks t, users u WHERE t.id = :id AND BINARY u.username = :username AND u.username = t.username AND BINARY u.password = :password", nativeQuery = true)
     List<Long> checkParentExists(@Param("id") Long id, @Param("username") String username, @Param("password") String password);
+
 }
