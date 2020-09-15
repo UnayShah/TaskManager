@@ -4,17 +4,17 @@ import java.util.List;
 import java.util.Map;
 
 import com.unay.taskmanager.model.Tasks;
-import com.unay.taskmanager.repository.TaskRepository;
+import com.unay.taskmanager.repository.TasksRepository;
 import com.unay.taskmanager.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TaskService {
+public class TasksService {
 
     @Autowired
-    TaskRepository tasksRepository;
+    TasksRepository tasksRepository;
     @Autowired
     UserRepository userRepository;
 
