@@ -33,4 +33,8 @@ public class TasksService {
             return false;
         }
     }
+
+	public List<Tasks> findAllByParentId(Map<String, String> map) {
+        return tasksRepository.findAllByParentId(Long.valueOf(map.get("id")), map.get("username"), map.get("password"));
+    }
 }
