@@ -24,17 +24,25 @@ public class TasksService {
 
     public Boolean createNewTask(Map<String, String> map) {
         try {
-            Tasks task = new Tasks();
-            task.setDescription(map.get("description"));
-            task.setParentId(Long.valueOf(map.get("parentId")));
-            task.setUser(userRepository.getOne(map.get("username")));
-            return !tasksRepository.save(task).equals(null);
+            if (map.get("parentId") == null || tasksRepository
+                    .checkParentExists(Long.valueOf(map.get("parentId")), map.get("username"), map.get("password"))
+                    .size() != 0) {
+                Tasks task = new Tasks();
+                task.setDescription(map.get("description"));
+                if(map.get("parentId") == null)
+                        task.setParentId(null);
+                else
+                    task.setParentId(Long.valueOf(map.get("parentId")));
+                task.setUser(userRepository.getOne(map.get("username")));
+                return !tasksRepository.save(task).equals(null);
+            } else
+                return false;
         } catch (Exception e) {
             return false;
         }
     }
 
-	public List<Tasks> findAllByParentId(Map<String, String> map) {
+    public List<Tasks> findAllByParentId(Map<String, String> map) {
         return tasksRepository.findAllByParentId(Long.valueOf(map.get("id")), map.get("username"), map.get("password"));
     }
 }
