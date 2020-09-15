@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./css/TasksWindowStyle.css">
+    <link rel="stylesheet" href="./css/newListStyle.css">
+    <title>
+        Tasks Application-New List
+    </title>
+</head>
+
+<div class="centeredContainer">
+    <div class="newListWindow">
+        <h1 class="titleNewList">Create a New List</h1>
+        <div class="createListInput">
+            <form>
+                <input id="task" name="task" type="text" class="newListName" placeholder="Enter List Name"></input>
+                <button formaction="http://localhost:8080/newTask" formmethod="POST"
+                    class="listCreateButton">Create</button>
+                <button
+                    formaction="http://localhost:8080/"
+                    class="listCreateButton">Back</button>
+            </form>
+        </div>
+    </div>
+</div>

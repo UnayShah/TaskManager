@@ -1,0 +1,269 @@
+body{
+    background-image: linear-gradient(to bottom right, #37474F, #263238);
+}
+.centeredContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.tasksWindow{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    max-width: 1000px;
+    max-height: 600px;
+    box-shadow: 0px 0px 20px 20px #263238;
+}
+.lists{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background-color: #78909C;
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.tasks{
+    display: flex;
+    flex-grow: 100;
+    flex-direction: column;
+    background-color: #546E7A;
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.listItemsContainer{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.listItem{
+    display: flex;
+    background-color: #455A64;
+    font-family: 'roboto';
+    font-size: large;
+    color: #ECEFF1;
+    padding: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;  
+    transition: all 100ms ease-in;
+}
+.listItem:hover{
+    background-color: #37474F;
+    font-size: large;
+    color: #CFD8DC;
+    transform: scale(1.01, 1.01);
+}
+.listItem:active{
+    background-color: #263238;
+    font-size: large;
+    color: #CFD8DC;
+    transform: scale(1, 1);
+}
+
+.newListButton{
+    display: flex;
+    text-align: center;
+    background-color: #616161;
+    font-family: 'roboto';
+    font-size: large;
+    color: #F5F5F5;
+    padding: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 0;
+    transition: all 100ms ease-in;
+}
+.newListButton:hover{
+    background-color: #212121;
+    font-size: large;
+    color: #EEEEEE;
+    transform: scale(1.01, 1.01);
+}
+.newListButton:active{
+    font-size: large;
+    color: #EEEEEE;
+    transform: scale(0.99, 0.99);
+}
+
+
+.title{
+    font-family: roboto;
+    color: #ECEFF1;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.taskItemsContainer{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.taskItem{
+    display: flex;
+    background-color: #455A64;  
+    font-family: 'roboto';
+    font-size: large;
+    color: #ECEFF1;
+    padding: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;  
+    transition: all 100ms ease-in;
+}
+
+.taskItem input[type=checkbox]{
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+        
+.taskCheckBox{
+    top: 0;
+    left: 0;
+    width: 20;
+    height: 20;
+    background-color: #BDBDBD;
+    margin: 5px;
+}
+
+.taskItem:hover{
+    background-color: #37474F;
+    font-size: large;
+    color: #CFD8DC;
+    transform: scale(1.01, 1.01);
+    box-shadow: 0px 0px 5px 5px #455A64;
+}
+
+.taskItem:active{
+    background-color: #263238;
+    font-size: large;
+    color: #CFD8DC;
+    transform: scale(0.99, 0.99);
+}
+
+.taskItem:hover input[type=checkbox] ~.taskCheckBox{
+    background-color: #9E9E9E;
+}
+
+.taskItem input[type=checkbox]:checked ~.taskCheckBox{
+    background-color: #616161;
+}
+
+.taskItem input[type=checkbox]:checked ~.taskCheckBox:after{
+    background-color: #616161;
+}
+
+.taskCheckBox:after{
+    content: "";
+    display: none;
+    position: absolute;
+}
+
+.taskItem input[type=checkbox]:checked ~.taskCheckBox:after{
+    display: block;
+}
+
+.taskItem .taskCheckBox:after{
+    position: relative;
+    left: 7px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.taskItemDescription{
+    color: #ECEFF1;
+    padding-top: 5px;
+    font-family: 'roboto';
+    font-size: large;
+    text-decoration: none;
+}
+.taskItem input[type=checkbox] ~.taskItemDescription{
+    text-decoration: none;
+}
+.taskItem input[type=checkbox]:checked ~.taskItemDescription{
+    text-decoration: solid line-through #78909C;
+    color: #78909C;
+}
+
+.newTaskButton{
+    align-self: flex-end;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;    
+    shape-outside: circle();
+    clip-path: circle();
+    background-image: radial-gradient(farthest-side at 40% 40%,#455A64, #37474F);
+    transition: all 100ms ease-in;
+    
+}
+.newTaskButton:hover{
+    transform: scale(1.02, 1.02);
+    background-image: radial-gradient(farthest-side at 40% 40%,#37474F, #263238);
+}
+.newTaskButton:active{
+    transform: scale(0.99, 0.99);
+    background-image: radial-gradient(farthest-side at 40% 40%,#455A64, #37474F);
+}
+
+.newTaskHorizontalLine{
+    background-color: #CFD8DC;
+    position: relative;
+    width: 35%;
+    height: 7%;
+    left: 32%;
+    top: 50%;
+    border-radius: 1px;
+    transition: all 100ms ease-in;
+}
+.newTaskHorizontalLine .newTaskButton:hover{
+    background-color: #B0BEC5;
+    transform: scale(1.05, 1.05);
+}
+.newTaskHorizontalLine .newTaskButton:active{
+    background-color: #ECEFF1;
+    transform: scale(0.99, 0.99);
+}
+.newTaskVerticalLine{
+    background-color: #CFD8DC;
+    position: relative;
+    height: 35%;
+    width: 8%;
+    left: 46%;
+    top: 29%;
+    border-radius: 1px;
+    transition: all 100ms ease-in;
+}
+.newTaskVerticalLine .newTaskButton:hover{
+    background-color: #B0BEC5;
+    transform: scale(1.05, 1.05);
+}
+.newTaskVerticalLine .newTaskButton:active{
+    background-color: #ECEFF1;
+    transform: scale(0.99, 0.99);
+}

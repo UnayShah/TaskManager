@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>
+        New User Registration
+    </title>
+    <link rel="stylesheet" href="./css/userLoginStyle.css">
+    <link rel="stylesheet" href="./css/TasksWindowStyle.css">
+</head>
+
+<body>
+    <div class="centeredContainer">
+        <div class="userLoginBox">
+            <h1 class="titleCredentials">Enter Details</h1>
+            <h2 class="errorCredentials" th:title="${error}"></h2>
+            <div class="userCredentials">
+                <form>
+                    <input type="text" placeholder="Username" class="loginCredentials" name="userName" th:value="${userName}">
+                    <input type="password" placeholder="Password" class="loginCredentials" name="password">
+                    <input type="password" placeholder="Re-type Password" class="loginCredentials" name="repassword">
+                    <div class="loginButtons">
+                        <input type="submit" formaction="http://localhost:8080/newUserRegister" formmethod="POST"
+                            class="loginButton" value="Sign Up">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <!-- <meta charset = "ISO-8859-1" /> -->
+    <link rel="stylesheet" href="./css/TasksWindowStyle.css">
+    <title>
+        Tasks Application
+    </title>
+</head>
+
+<div class="centeredContainer">
+    <div class="tasksWindow">
+        <div class="lists">
+
+            <h1 class="title">Lists</h1>
+
+            <div class="listItemsContainer">
+                <a class="listItem">
+                    List Item 1
+                </a>
+                <a class="listItem">
+                    List Item 2
+                </a>
+            </div>
+
+            <button class="newListButton">
+                + List
+            </button>
+
+        </div>
+
+        <div class="tasks">
+            <h1 class="title">Tasks</h1>
+            <div class="taskItemsContainer">
+                <label class="taskItem">
+                    <input type="checkbox" name="Task Item 1">
+                    <div class="taskCheckBox">
+                    </div>
+                    <div class="taskItemDescription">Task Item 1</div>
+                </label>
+                <label class="taskItem">
+                    <input type="checkbox" name="Task Item 2">
+                    <div class="taskCheckBox">
+                    </div>
+                    <div class="taskItemDescription">Task Item 2</div>
+                </label>
+                <label class="taskItem">
+                    <input type="checkbox" name="Task Item 3">
+                    <div class="taskCheckBox">
+                    </div>
+                    <div class="taskItemDescription">Task Item 3</div>
+                </label>
+            </div>
+            <form class="newTaskButton">
+                <button formaction="http://localhost:8080/newTaskEntry" formmethod="GET" style="display: contents;">
+                <div class="newTaskButton">
+                        <div class="newTaskHorizontalLine"></div>
+                        <div class="newTaskVerticalLine"></div>
+                    </div>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- <script>
+    $(document).ready(function(){
+        $.getJSON("tasks.json", function(data){
+            var tasks = '';
+            $.each(data, function(key, value){
+                <label class="taskItem">
+                    <input type="checkbox" name="Task Item 2">
+                    <div class="taskCheckBox">
+                    </div>
+                    <div class="taskItemDescription">Task Item 2</div>
+                </label>
+            })
+        })
+    })
+</script> -->
+
+</html>

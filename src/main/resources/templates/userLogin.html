@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>
+        Login
+    </title>
+    <link rel="stylesheet" href="./css/userLoginStyle.css">
+    <link rel="stylesheet" href="./css/TasksWindowStyle.css">
+</head>
+
+<body>
+    <div class="centeredContainer">
+        <div class="userLoginBox">
+            <h1 class="titleCredentials">Enter Credentials</h1>
+            <div class="userCredentials">
+                <form>
+                    <h2 class="errorCredentials" th:text="${error}"></h2>
+                        <!-- <td text="${">fksdljkfsl}</td> -->
+                        <input type="text" placeholder="Username" class="loginCredentials" name="userName">
+                        <input type="password" placeholder="Password" class="loginCredentials" name="password">
+                        <div class="loginButtons">
+                            <input type="submit" formaction="http://localhost:8080/" formmethod="POST"
+                                class="loginButton" value="Login">
+                            <input type="submit" formaction="http://localhost:8080/newUser" formmethod="POST"
+                                class="loginButton" value="Sign Up">
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

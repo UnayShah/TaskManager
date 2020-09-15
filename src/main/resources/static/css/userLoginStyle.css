@@ -1,0 +1,84 @@
+.userLoginBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    padding-bottom: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    border-radius: 10px;
+    min-width: 60px;
+    min-height: 40px;
+    background-color: #78909C;
+    box-shadow: 0px 0px 20px 20px #263238;
+    text-align: center;
+    font-family: 'roboto';
+    color: #ECEFF1;
+}
+
+.titleCredentials{
+    width: 100%;
+    font-size: 50px;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+}
+
+.errorCredentials{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 1000;
+    color: #424242;
+}
+
+.userCredentials{
+    max-width: 400px;
+    max-height: 300px;
+    width:100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.loginCredentials{
+    height: 100%;
+    width: 100%;
+    max-height: 60px;
+    border-radius: 10px;
+    color: #263238;
+    font-size: 20px;
+    letter-spacing: 2px;
+    border: 0px;
+    padding: 20px;
+    margin: 10px;
+    transition: all 100ms ease-in;
+}
+
+.loginCredentials:hover, :active, :after{
+    box-shadow: 0px 0px 5px 5px #546E7A;
+    transform: scale(1.03, 1.03);
+}
+
+.loginButton{
+    height: 55px;
+    width: 150px;
+    border-radius: 10px;
+    border: 0px;
+    margin: 10px;
+    background-color: #37474F;
+    color: #CFD8DC;
+    font-weight: 500;
+    font-family: 'roboto';
+    font-size: x-large;
+    text-align: center;
+}
+.loginButton:hover{
+    background-color: #455A64;
+    color: #ECEFF1;
+    transform: scale(1.05, 1.05);
+}
+
+.loginButton:active{
+    background-color: #263238;
+    transform: scale(0.95, 0.95);
+}
