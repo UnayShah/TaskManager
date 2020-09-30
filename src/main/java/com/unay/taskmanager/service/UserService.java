@@ -47,6 +47,14 @@ public class UserService {
 
 	public boolean login(User user) {
 		return userRepository.findById(user.getUsername()).isPresent()
+		&& userRepository.findById(user.getUsername()).get().getPassword().equals(user.getPassword());
+	}
+	
+	public boolean login(Map<String, String> map) {
+		User user = new User();
+		user.setUsername(map.get("username"));
+		user.setPassword(map.get("password"));
+		return userRepository.findById(user.getUsername()).isPresent()
 				&& userRepository.findById(user.getUsername()).get().getPassword().equals(user.getPassword());
 	}
 

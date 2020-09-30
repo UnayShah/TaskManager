@@ -6,6 +6,8 @@
     </title>
     <link rel="stylesheet" href="./css/userLoginStyle.css">
     <link rel="stylesheet" href="./css/TasksWindowStyle.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/userLogin.js"></script>
 </head>
 
 <body>
@@ -13,18 +15,23 @@
         <div class="userLoginBox">
             <h1 class="titleCredentials">Enter Credentials</h1>
             <div class="userCredentials">
-                <form>
-                    <h2 class="errorCredentials" th:text="${error}"></h2>
-                        <!-- <td text="${">fksdljkfsl}</td> -->
-                        <input type="text" placeholder="Username" class="loginCredentials" name="userName">
-                        <input type="password" placeholder="Password" class="loginCredentials" name="password">
-                        <div class="loginButtons">
-                            <input type="submit" formaction="http://localhost:8080/" formmethod="POST"
-                                class="loginButton" value="Login">
-                            <input type="submit" formaction="http://localhost:8080/newUser" formmethod="POST"
-                                class="loginButton" value="Sign Up">
-                        </div>
-                </form>
+                <!-- <form enctype="text/plain"> -->
+                <div class="errorCredentials" id="errorCredentials"><h2>Invalid Details</h2></div>
+                <input type="text" autocomplete="off" placeholder="Username" class="loginCredentials" name="username"
+                    id="username">
+                <div class="emptyField" id="emptyFieldUsername">Username cannot be empty</div>
+                <input type="password" placeholder="Password" class="loginCredentials" name="password" id="password">
+                <div class="emptyField" id="emptyFieldPassword">Password cannot be empty</div>
+                <div class="loginButtons">
+                    <!-- <input type="submit" class="loginButton" value="Login" id="loginButton" formmethod="POST"
+                            formaction="localhost:8080/login">
+                        <input type="submit" class="loginButton" value="Sign Up" id="signUpButton"
+                            formaction="localhost:8080/register"> -->
+
+                    <input type="button" class="loginButton" value="Login" id="loginButton">
+                    <input type="button" class="loginButton" value="Sign Up" id="signUpButton">
+                </div>
+                <!-- </form> -->
             </div>
         </div>
     </div>
