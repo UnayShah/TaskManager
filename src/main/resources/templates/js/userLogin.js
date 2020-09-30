@@ -39,17 +39,19 @@ document.addEventListener("DOMContentLoaded", function () {
     loginButton.addEventListener("click", function (event) {
         const url = "http://localhost:8080/login";
         const params = { 'username': username.value, 'password': password.value };
-        loginFunction(params, url, 'POST');
+        loginFunction(params, url);
     });
 
 });
 
-async function loginFunction(params, url, method) {
+async function loginFunction(params, url) {
     var errorCredentials = document.getElementById('errorCredentials');
     try {
         let value = await axios.post(url, params);
         console.log(value.data);
         if (value.data == true) {
+            localStorage.setItem('userLogin', JSON.stringify(params));
+            window.location.replace("noteTemplate.html");
             errorCredentials.style.visibility = 'hidden';
         }
         else {

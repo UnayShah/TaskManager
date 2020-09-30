@@ -1,8 +1,9 @@
 <html>
 
 <head>
-    <!-- <meta charset = "ISO-8859-1" /> -->
     <link rel="stylesheet" href="./css/TasksWindowStyle.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/userTask.js"></script>
     <title>
         Tasks Application
     </title>
@@ -14,7 +15,7 @@
 
             <h1 class="title">Lists</h1>
 
-            <div class="listItemsContainer">
+            <div class="listItemsContainer" id="parentTasks">
                 <a class="listItem">
                     List Item 1
                 </a>
@@ -31,7 +32,7 @@
 
         <div class="tasks">
             <h1 class="title">Tasks</h1>
-            <div class="taskItemsContainer">
+            <div class="taskItemsContainer" id="childTasks">
                 <label class="taskItem">
                     <input type="checkbox" name="Task Item 1">
                     <div class="taskCheckBox">
@@ -53,7 +54,7 @@
             </div>
             <form class="newTaskButton">
                 <button formaction="http://localhost:8080/newTaskEntry" formmethod="GET" style="display: contents;">
-                <div class="newTaskButton">
+                    <div class="newTaskButton">
                         <div class="newTaskHorizontalLine"></div>
                         <div class="newTaskVerticalLine"></div>
                     </div>

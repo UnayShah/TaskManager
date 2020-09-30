@@ -29,8 +29,8 @@ public class TasksService {
                     .size() != 0) {
                 Tasks task = new Tasks();
                 task.setDescription(map.get("description"));
-                if(map.get("parentId") == null)
-                        task.setParentId(null);
+                if (map.get("parentId") == null)
+                    task.setParentId(null);
                 else
                     task.setParentId(Long.valueOf(map.get("parentId")));
                 task.setUser(userRepository.getOne(map.get("username")));
@@ -45,5 +45,5 @@ public class TasksService {
     public List<Tasks> findAllByParentId(Map<String, String> map) {
         return tasksRepository.findAllByParentId(Long.valueOf(map.get("id")), map.get("username"), map.get("password"));
     }
-    
+
 }
